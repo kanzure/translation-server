@@ -320,6 +320,7 @@ Zotero.Server.Translation.Web.prototype = {
 			var items = new Array(n);
 			for(var i=0; i<n; i++) {
 				items[i] = Zotero.Utilities.itemToServerJSON(translate.newItems[i]);
+				items[i]["attachments"] = translate.newItems[i]["attachments"];
 			}
 			
 			this.sendResponse(200, "application/json", JSON.stringify(items));
